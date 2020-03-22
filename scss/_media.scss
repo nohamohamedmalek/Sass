@@ -1,0 +1,41 @@
+
+@include Sm{
+    header {
+        position: static;
+        text-align: center;
+        .w_f {
+            float: none;
+            width: 100%;
+        }
+        ul {
+            display: block;
+        }
+    }
+    .h2 {
+        font-size: 1.5rem;
+    }
+    .service {
+        .service-parent {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    .image {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@include Xs{
+    .service {
+        .service-parent {
+            grid-template-columns: 1fr;
+        }
+    }
+    .image {
+        grid-template-columns: 1fr;
+    }
+}
+// @include Md{
+    
+// }
+// @include Lg{
+    
+// }

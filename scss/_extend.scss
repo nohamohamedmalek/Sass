@@ -1,0 +1,41 @@
+.container {
+    margin: auto;
+    width: 85%;
+}
+//extends
+.w_f {
+    width: 50%;
+    float: left;
+}
+.h2{
+    font-size: 2rem;
+    color: #fff;
+}
+.span{
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: $primarycolor;
+    margin:1rem auto;
+    }
+.p{
+    margin: 1.5rem 0;
+    color: $secondarycolor;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+.button{
+    background: $primarycolor;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border:0;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+        background:#fff;
+        color: $primarycolor;
+        @include Trans;
+    }
+}

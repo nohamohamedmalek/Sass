@@ -1,0 +1,215 @@
+@import "variable";
+@import "mixin";
+@import "extend";
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Marriweather, 'Helvetica Neue', Arial, sans-serif;
+}
+
+//Header
+header{
+    background-color: $secondarycolor;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    .logo{
+        @extend .w_f;
+        h2{
+            color:#c9c5bd;
+            padding:10px 0;
+        }
+        
+    }
+    
+
+    ul{
+        @extend .w_f;
+        display: flex;
+        list-style: none;
+        padding: 10px 0;
+    }
+        li {
+           padding: 10px 15px
+        }
+        a{
+            text-decoration: none;
+            color:#c9c5bd;
+            font-weight: bold;
+            text-transform: uppercase;
+            @include Trans;
+            &:hover {
+                color: $primarycolor
+            }
+        } 
+}             
+
+//Home 
+.home {
+    background: $home_bg;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+
+    .home-content {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+
+        h2 {
+            @extend .h2;
+        }
+         span {
+             @extend .span;
+         }
+        p {
+            @extend .p;
+        }
+       button {
+          @extend .button;
+           }
+       }
+    }
+//Need
+.need {
+    background-color: $primarycolor;
+    padding: 3rem 0;
+    text-align: center;
+    h2{
+     @extend .h2;
+    }
+    p{
+        @extend .p;
+    }
+    span {
+        @extend .span;
+        background: #fff;
+    }
+    button {
+        @extend .button;
+        background: #fff;
+        color:$secondarycolor;
+        &:hover {
+            background: $secondarycolor;
+            color: #fff;
+        }
+    }
+}
+//Service 
+.service {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #fff;
+    h2{
+        @extend .h2;
+        color: $secondarycolor;
+    }
+    span {
+        @extend .span;
+    }
+    .service-parent {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap:15px;
+        margin:3rem 0;
+        i {
+            color: $primarycolor;
+        }
+        h3 {
+            margin: 1rem 0;
+            color: #333;
+        }
+        p{
+            color: #a4a4a4;
+            font-size: 15px;
+        }
+    }
+}
+//Image
+.image {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    font-size: 0;
+   > div{
+       position: relative;
+       
+       img {
+           width: 100%;
+       }
+       &:after {
+           content: "";
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: rgba($primarycolor,0.6);
+           opacity: 0;
+           @include Trans;
+       }
+       &:hover {
+           &:after {
+               opacity: 1;
+           }
+       }
+    }
+    
+}
+//Download
+.download {
+    text-align: center;
+    background: $secondarycolor;
+    padding: 5rem 0;
+    h2 {
+        @extend .h2;
+    }
+    button {
+       @extend .button;
+       background: #fff;
+       color: $secondarycolor;
+       margin: 1rem 0;
+       &:hover {
+        background: $secondarycolor;
+        color: #fff;
+        border: 1px solid #fff ;
+       }
+    }
+}
+//Get in touch
+.get-in-touch {
+    text-align:center;
+    padding: 5rem 0;
+    h2 {
+        @extend h2;
+        color: $secondarycolor;
+    }
+   > span {
+        @extend .span;
+    }
+    p{
+        @extend .p;
+    }
+    .touch {
+        display: flex;
+        justify-content: center;
+        .item {
+                 margin: 1rem 1.5rem;
+            i {
+                display: block;
+            }
+            &:last-child {
+                span {
+                    color: $primarycolor;
+                }
+            }
+        }
+        
+    }
+}
+@import "media";
